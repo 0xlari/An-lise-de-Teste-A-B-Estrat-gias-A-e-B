@@ -1,85 +1,59 @@
-📊 Análise de Teste A/B: Estratégias A e B
-Este projeto realiza a comparação entre duas estratégias de sucesso (A e B) utilizando teste Z para diferenças de médias em amostras independentes.
+# 📊 Análise de Teste A/B: Estratégias A e B
 
-O objetivo é testar a hipótese nula de que não há diferença entre as duas estratégias.
+Este projeto realiza a comparação entre duas estratégias de sucesso (A e B) utilizando o **Teste Z** para diferenças de médias em amostras independentes.
 
-🔍 Sobre o Projeto
-O código:
+O objetivo é testar a hipótese nula de que **não há diferença significativa** entre as duas estratégias.
 
-Calcula as variâncias amostrais 📈
+---
 
-Calcula a estatística de teste Z 🧮
+## 🔍 Sobre o Projeto
 
-Determina o p-valor associado a essa estatística 📊
+O código realiza:
 
-Compara o p-valor a um nível de significância (5%) para decidir se rejeita ou não a hipótese nula 🚦
+- 📈 Cálculo das variâncias amostrais
+- 🧮 Cálculo da estatística de teste Z
+- 📊 Cálculo do **p-valor** associado
+- 🚦 Decisão estatística com base no nível de significância de 5%
 
-🛠️ Tecnologias Utilizadas
-Python 🐍
+Este teste é útil para avaliar se uma nova estratégia apresenta resultados significativamente diferentes em comparação com uma estratégia já existente.
 
-Bibliotecas:
+---
 
-scipy
+## 🛠️ Tecnologias Utilizadas
 
-numpy (opcional, para trabalhar com arrays)
+- **Python 3.10+** 🐍
+- **Bibliotecas:**
+  - [`scipy`](https://scipy.org/) — para funções estatísticas
+  - `numpy` (opcional, para manipulação de arrays)
+  - `pandas` (opcional, se as amostras forem DataFrames)
 
-pandas (opcional, se suas amostras forem DataFrames)
+---
 
-🧩 Como Rodar o Projeto
-Clone o repositório:
+## 📈 Estrutura do Projeto
+📁 Analise-Teste-Z ├── 📄 README.md ├── 📄 analise_teste_z.ipynb └── 📄 requirements.txt (opcional)
 
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/seu-repositorio.git
-Instale as dependências:
+---
+## 🧠 Conceitos Envolvidos
 
-bash
-Copiar
-Editar
-pip install scipy numpy pandas
-Execute o notebook (.ipynb) no Jupyter Notebook, Google Colab ou VSCode.
+Estatística Z:
+Mede a diferença entre duas médias, levando em consideração as variações amostrais.
 
-📈 Estrutura do Código
-python
-Copiar
-Editar
-# 1. Calcular variâncias
-var_existente = amostra_estrategia_A.var(ddof=1)
-var_novo = amostra_estrategia_B.var(ddof=1)
+p-valor:
+Indica a probabilidade dos resultados observados ocorrerem sob a hipótese nula.
 
-# 2. Calcular médias
-media_existente = amostra_estrategia_A.mean()
-media_novo = amostra_estrategia_B.mean()
+Teste Bilateral:
+Testa se há diferença, sem especificar uma direção (maior ou menor).
 
-# 3. Estatística de teste Z
-z_statistic = (media_existente - media_novo) / ((var_existente/n + var_novo/n) ** 0.5)
+---
 
-# 4. Calcular p-valor
-p_valor = 2 * (1 - stats.norm.cdf(abs(z_statistic)))
+## ⚡ Exemplo de Interpretação
 
-# 5. Decisão
-if p_valor < 0.05:
-    print("Rejeitamos a hipótese nula.")
-else:
-    print("Não rejeitamos a hipótese nula.")
-📚 Conceitos Trabalhados
-Estatística de Teste Z
+Se o p-valor < 0.05 → Rejeitamos a hipótese nula (há diferença significativa).
 
-Variância amostral
+Se o p-valor ≥ 0.05 → Não rejeitamos a hipótese nula (não há evidência suficiente de diferença).
 
-Teste de Hipóteses
+---
 
-p-valor
+## 🧑‍💻 Autor
 
-Nível de significância
-
-✨ Melhorias Futuras
-Implementar visualização dos resultados (gráficos comparando as duas estratégias)
-
-Automatizar para diferentes tamanhos de amostra
-
-Transformar em função ou classe para reuso
-
-🧑‍💻 Autor
 Larissa Barros
